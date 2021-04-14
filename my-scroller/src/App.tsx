@@ -1,24 +1,21 @@
-import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+// pages
+import Home from './Pages/Home';
+import Favorite from './Pages/Favorite';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <React.Fragment>
+        <Switch>
+          <Route path="/" exact component={Home}/>
+          <Route path="/favorite" exact component={Favorite}/>
+        </Switch>
+      </React.Fragment>
+    </BrowserRouter>
   );
 }
 
