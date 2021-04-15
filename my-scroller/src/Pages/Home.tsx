@@ -1,7 +1,13 @@
 import React from 'react';
 
+// Components:
+import Nav from './../components/header/Header';
+
 export default function Home() {
     return (
-        <h1>Hello Home</h1>
+        <React.Fragment>
+            <h1>Home</h1>
+            <Nav/>
+        </React.Fragment>
     )
 }
