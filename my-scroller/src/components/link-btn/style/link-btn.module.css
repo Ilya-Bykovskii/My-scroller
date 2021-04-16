@@ -1,0 +1,22 @@
+.btn {
+    list-style: none;
+    display: flex;
+    align-content: center;
+}
+
+.link {
+    text-decoration: none;
+    font-family: sans-light;
+    color: #FFF;
+    font-size: 21px;
+    transition: all 250ms ease-in-out 10ms;
+}
+
+.link:hover {
+    color: #FA662C;
+    transform: scale(1.02);
+}
+
+.icon {
+    margin-right: 12px;
+}

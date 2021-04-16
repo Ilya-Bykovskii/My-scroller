@@ -1,0 +1,25 @@
+.menu {
+    position: fixed;
+    width: 25vw;
+    background-color: #121212;
+    height: 100%;
+    top: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.menu__wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: min-content;
+    padding-left: 15px;
+    margin-top: 15px;
+}
+
+.menu__item {
+    margin-bottom: 10px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+}

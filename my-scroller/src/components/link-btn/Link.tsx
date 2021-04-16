@@ -1,20 +1,34 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 
 // 1. styles
-import StyleComp from './styles/menu.module.css';
+import StyleComp from './style/link-btn.module.css';
+
+
+type style =  'Home' | 'Favorite';
 
 interface LinkProp {
-    content: string;
+    content: style;
     path: string;
+    className: string;
+    icon: React.ReactChild;
 }
 
 function NavLink(prop: LinkProp) {
+
     return (
-        <li>
+        <li                 
+            className={`${prop.className} ${StyleComp.btn}`}
+        >
             <Link 
-                to={prop.path} 
+                className={StyleComp.link}
+                to={prop.path}
             >
+                <span
+                    className={StyleComp.icon}
+                >
+                    {prop.icon}
+                </span>
                 {prop.content}
             </Link>
         </li>

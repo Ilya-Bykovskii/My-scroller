@@ -1,0 +1,14 @@
+@font-face {
+    font-family: sans-reg;
+    src: url('./../../media/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: sans-light;
+    src: url(./../../media/OpenSans-Light.ttf);
+}
+
+#root {
+    font-family: sans-reg;
+    color: #FFF;
+}

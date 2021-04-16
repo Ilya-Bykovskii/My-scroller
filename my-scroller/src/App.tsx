@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // pages
 import Home from './Pages/Home';
-import Favorite from './Pages/Favorite';
+import Favorite from './Pages/favorite';
 
 function App() {
   return (
