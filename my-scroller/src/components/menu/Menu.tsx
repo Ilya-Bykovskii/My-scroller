@@ -1,5 +1,5 @@
-import React from 'react';
-import {House, HeartStraight} from 'phosphor-react';
+import React, {useState} from 'react';
+import {House, HeartStraight, X, List} from 'phosphor-react';
 
 // Components
 import NavLink from '../link-btn/Link';
@@ -8,8 +8,21 @@ import NavLink from '../link-btn/Link';
 import StyleComp from './style/menu.module.css';
 
 function Nav(prop: {place: string}) {
+    const [visibly, setVisibly] = useState<boolean>(false);
+    const closeIc = <X 
+        size={25}
+        className={StyleComp.statusIcon}
+        onClick={() => setVisibly(false)}
+    />;
+    const visualIc = <List 
+        className={StyleComp.statusIcon}
+        onClick={() => setVisibly(true)}
+        size={25}
+    />
+
     return (
-        <nav  className={StyleComp.menu}>
+        <nav  className={`${StyleComp.menu} ${visibly ? StyleComp.visualy : StyleComp.hidden}`}>
+            {visibly ? closeIc : visualIc}
             <div
                 className={StyleComp.logo}
             >
@@ -18,7 +31,6 @@ function Nav(prop: {place: string}) {
                     alt='logo'
                 />
             </div>
-            
             <ul className={StyleComp.menu__wrapper}>
                 <NavLink
                     content={'Home'}

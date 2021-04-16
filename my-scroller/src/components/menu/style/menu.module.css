@@ -1,10 +1,21 @@
 .menu {
     position: fixed;
-    width: 25vw;
+    width: 23vw;
     background-color: #121212;
     height: 100%;
     top: 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    transition: all 200ms ease-in-out 0;
+}
+
+.hidden {
+    transition: all 200ms ease-in-out;
+    left: -20vw
+}
+
+.visualy{
+    transition: all 200ms ease-in-out;
+    left: 0vw;
 }
 
 .menu__wrapper {
@@ -22,4 +33,11 @@
 .logo {
     display: flex;
     justify-content: center;
+}
+
+.statusIcon {
+    float: right;
+    margin-right: 0.7vw;
+    position: relative;
+    cursor: pointer;
 }
