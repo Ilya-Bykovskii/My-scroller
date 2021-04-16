@@ -7,7 +7,9 @@ export default function Favorite() {
     return (
         <React.Fragment>
             <h1>Favorite</h1>
-            <Nav/>
+            <Nav
+                place={'Favorite'}
+            />
         </React.Fragment>
     )
 }

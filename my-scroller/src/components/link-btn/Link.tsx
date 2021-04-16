@@ -11,12 +11,9 @@ interface LinkProp {
 
 function NavLink(prop: LinkProp) {
     return (
-        <li
-            className='nav-item'
-        >
+        <li>
             <Link 
                 to={prop.path} 
-                className="nav-link active"
             >
                 {prop.content}
             </Link>

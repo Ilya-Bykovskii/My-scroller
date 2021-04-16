@@ -1,17 +1,18 @@
 import React from 'react';
+import {List} from 'phosphor-react';
 
 // Components
-import NavLink from './Link';
+import NavLink from '../link-btn/Link';
 
 // styles:
 // import StyleComp from './styles/menu.module.css';
 
-export default function Nav() {
+function Nav(prop: {place: string}) {
     return (
         <nav>
-            <ul className="nav">
+            <ul>
                 <NavLink
-                    content={'home'}
+                    content={'Home'}
                     path={'/'}
                 />
                 <NavLink
@@ -22,3 +23,5 @@ export default function Nav() {
         </nav>
     )
 }
+
+export default Nav;

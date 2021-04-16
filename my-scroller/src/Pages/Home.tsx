@@ -7,7 +7,9 @@ export default function Home() {
     return (
         <React.Fragment>
             <h1>Home</h1>
-            <Nav/>
+            <Nav
+                place={'Home'}
+            />
         </React.Fragment>
     )
 }
