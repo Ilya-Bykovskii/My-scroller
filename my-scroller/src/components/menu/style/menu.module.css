@@ -1,16 +1,17 @@
 .menu {
     position: fixed;
-    width: 23vw;
+    width: 17vw;
     background-color: #121212;
     height: 100%;
     top: 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
     transition: all 200ms ease-in-out 0;
+    padding-top: 15px;
 }
 
 .hidden {
     transition: all 200ms ease-in-out;
-    left: -20vw
+    left: -14vw
 }
 
 .visualy{
@@ -24,10 +25,6 @@
     min-height: min-content;
     padding-left: 15px;
     margin-top: 15px;
-}
-
-.menu__item {
-    margin-bottom: 10px;
 }
 
 .logo {

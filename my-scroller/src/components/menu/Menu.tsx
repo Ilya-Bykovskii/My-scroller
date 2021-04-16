@@ -2,13 +2,14 @@ import React, {useState} from 'react';
 import {House, HeartStraight, X, List} from 'phosphor-react';
 
 // Components
-import NavLink from '../link-btn/Link';
+import NavLink from './Link';
 
 // styles:
 import StyleComp from './style/menu.module.css';
 
 function Nav(prop: {place: string}) {
     const [visibly, setVisibly] = useState<boolean>(false);
+    
     const closeIc = <X 
         size={25}
         className={StyleComp.statusIcon}
@@ -35,13 +36,11 @@ function Nav(prop: {place: string}) {
                 <NavLink
                     content={'Home'}
                     path={'/'}
-                    className={StyleComp.menu__item}
                     icon={<House size={21}/>}
                 />
                 <NavLink
                     content={'Favorite'}
                     path={'/favorite'}
-                    className={StyleComp.menu__item}
                     icon={<HeartStraight size={21} />}
                 />
             </ul>

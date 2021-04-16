@@ -1,0 +1,22 @@
+.header {
+    width: 100%;
+    height: 300px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-image: url('https://d2kq0urxkarztv.cloudfront.net/53f6001f944872863c20dc73/1917675/upload-af46e39e-6559-4873-ae15-89b9435dc418.jpg?w=2050&e=webp');
+}
+
+.navWrapper {
+    width: 50vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.logo {
+    margin-bottom: 30px;
+}

@@ -10,7 +10,6 @@ type style =  'Home' | 'Favorite';
 interface LinkProp {
     content: style;
     path: string;
-    className: string;
     icon: React.ReactChild;
 }
 
@@ -18,7 +17,7 @@ function NavLink(prop: LinkProp) {
 
     return (
         <li                 
-            className={`${prop.className} ${StyleComp.btn}`}
+            className={StyleComp.btn}
         >
             <Link 
                 className={StyleComp.link}

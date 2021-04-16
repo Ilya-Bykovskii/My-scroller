@@ -2,6 +2,7 @@
     list-style: none;
     display: flex;
     align-content: center;
+    margin-bottom: 10px;
 }
 
 .link {
@@ -10,10 +11,11 @@
     color: #FFF;
     font-size: 21px;
     transition: all 250ms ease-in-out 10ms;
+    cursor: pointer;
 }
 
 .link:hover {
-    color: #FA662C;
+    color: #F26430;
     transform: scale(1.02);
 }
 

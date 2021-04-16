@@ -8,12 +8,9 @@
     src: url(./../../media/OpenSans-Light.ttf);
 }
 
-#root {
-    font-family: sans-reg;
-    color: #FFF;
-    margin: 0;
-}
-
 body {
     margin: 0;
+    background-color: #001954;
+    font-family: sans-reg;
+    color: #F2DEC4;
 }
