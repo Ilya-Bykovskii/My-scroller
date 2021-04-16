@@ -3,6 +3,7 @@ import React from 'react';
 // Components:
 import Nav from '../components/menu/Menu';
 import SortNav from './../components/sort-nav/SortNav';
+import CardArea from './../components/card-area/CardArea';
 
 export default function Home() {
     return (
@@ -11,6 +12,7 @@ export default function Home() {
                 place={'Home'}
             />
             <SortNav/>
+            <CardArea/>
         </React.Fragment>
     )
 }

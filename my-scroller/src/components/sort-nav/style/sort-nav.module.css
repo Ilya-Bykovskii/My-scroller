@@ -1,5 +1,5 @@
 .header {
-    width: 100%;
+    width: 1fr;
     height: 300px;
     background-color: #000;
     display: flex;
@@ -8,6 +8,11 @@
     flex-direction: column;
 
     background-image: url('https://d2kq0urxkarztv.cloudfront.net/53f6001f944872863c20dc73/1917675/upload-af46e39e-6559-4873-ae15-89b9435dc418.jpg?w=2050&e=webp');
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .navWrapper {
@@ -19,4 +24,13 @@
 
 .logo {
     margin-bottom: 30px;
+}
+
+@media only screen and (max-device-width : 900px) {
+    .navWrapper {
+        width: max-content;
+    }
+    .navItem {
+        margin: 0 10px;
+    }
 }
