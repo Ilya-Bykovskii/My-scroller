@@ -3,24 +3,26 @@ import React, {useState, useEffect} from 'react';
 // Components: 
 import CardPrev from './card-preview/CardPrev';
 
+// hooks:
+import genCards from './../../hooks/useGenCards';
+
 // style:
 import StyleComp from './style/card-area.module.css';
+
+type Preority = 'item__new' | 'item__light' | 'item__important' | ' ';
 
 interface Post {
     id: number | string;
     title: string;
-    preview?: string;
+    preview: string;
     body: string;
-    type: 'animal' | 'video' | 'music' | 'books';
+    type?: 'animal' | 'video' | 'music' | 'books';
+    handler?: Function,
+    preority?: Preority,
 }
 
 export default function CardArea() {
     const [items, setItems] = useState<Array<Post>>([]);
-
-    const genPreview = function(body: string): string {
-        if (body.length <= 50) return body;
-        return body.slice(0, 50) + '...';
-    }
 
     async function getNewPosts() {
         await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -31,7 +33,7 @@ export default function CardArea() {
         .then(data => data.json())
         .then(json => {
             json.length = 20;
-            setItems(prev => [...prev, ...json])
+            setItems(prev => [...prev, ...genCards(json)])
         })
         .catch(err => console.log(err));
     } 
@@ -48,11 +50,12 @@ export default function CardArea() {
             <ul
                 className={StyleComp.card_area_wrapper}
             >
-                {items.map(elem => {
+                {items.map((elem) => {
                     return <CardPrev
                         id={elem.id}
                         title={elem.title}
-                        preview={elem.preview || genPreview(elem.body)}
+                        preview={elem.preview}
+                        preority={' '}
                     />
                 })}
             </ul>

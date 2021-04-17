@@ -10,7 +10,9 @@
 
 body {
     margin: 0;
-    background-color: #001954;
     font-family: sans-reg;
     color: #F2DEC4;
+
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(24,24,149,1) 24%, rgba(66,105,142,1) 100%);
 }

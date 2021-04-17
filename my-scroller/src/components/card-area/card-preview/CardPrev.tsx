@@ -9,14 +9,15 @@ interface PostPreview {
     id: number | string;
     title: string;
     preview: string;
-    handler?: Function
+    preority: 'item__new' | 'item__light' | 'item__important' | ' ', 
+    handler?: Function,
 }
 
 export default function CardPrev(prop: PostPreview) {
     const defoultImg = 'http...';
     return (
         <li 
-            className={StyleComp.item}
+            className={`${StyleComp.item} ${StyleComp[prop.preority!]}`}
             key={prop.id}
         >
             <div
