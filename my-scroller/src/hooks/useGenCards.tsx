@@ -18,8 +18,8 @@ interface Post extends ServerData{
 
 
 const genPreview = function(body: string): string {
-    if (body.length <= 50) return body;
-    return body.slice(0, 50) + '...';
+    if (body.length <= 150) return body;
+    return body.slice(0, 150) + '...';
 }
 
 const genPreority = function(index: number, count: number): [Preority, number] {
@@ -38,7 +38,7 @@ export default function genCards(props: ServerData[]) {
             id: elem.id,
             title: elem.title,
             body: elem.body,
-            preview: ' ',
+            preview: genPreview(elem.body),
             preority: preopity,
         };
 

@@ -1,6 +1,12 @@
 .item {
-    height: 400px;
+    height: 300px;
     list-style: none;
+    cursor: pointer;
+    transition: transform 300ms linear 100ms;
+}
+
+.item:hover {
+    transform: scale(1.04)
 }
 
 .item__important {
@@ -23,6 +29,23 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    transition: all 200ms linear 300ms;
+}
+
+
+.glass_morph {
+    text-align: center;
+    display: flex;
+    align-item: center;
+    justify-content: center;
+
+    background: rgba( 255, 255, 255, 0.35 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 1.5px );
+    -webkit-backdrop-filter: blur( 1.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 
@@ -31,6 +54,12 @@
     text-transform: uppercase;
     font-family: sans-light;
     font-weight: 200;
+    padding-left: 10px;
+    text-align: justify;
+}
+
+.item__prev {
+    display: block;
 }
 
 

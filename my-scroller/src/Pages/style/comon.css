@@ -16,3 +16,14 @@ body {
     background: rgb(2,0,36);
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(24,24,149,1) 24%, rgba(66,105,142,1) 100%);
 }
+
+.visually-hidden {
+    opacity: 0;
+    position: absolute;
+    /* clip: rect(1px, 1px, 1px, 1px); */
+    padding: 0;
+    border: 0;
+    /* height: 1px; */
+    /* width: 1px; */
+    overflow: hidden;
+}
