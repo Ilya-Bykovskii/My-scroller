@@ -1,6 +1,3 @@
-import { count } from 'node:console';
-import React, {useState} from 'react';
-
 type Preority = 'item__new' | 'item__light' | 'item__important' | ' ';
 
 interface ServerData {
@@ -30,8 +27,9 @@ const genPreority = function(index: number, count: number): [Preority, number] {
 
 export default function genCards(props: ServerData[]) {
     let counter = 0;
-    console.log(props);
-    alert('wait');
+
+    // console.log(props)
+
     return props.map((elem, index): Post => {
         let [preopity, i] = genPreority(index, 5 - counter % 4);
         let res: Post = {

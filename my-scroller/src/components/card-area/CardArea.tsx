@@ -1,7 +1,8 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useEffect} from 'react';
 
 // Components: 
 import CardPrev from './card-preview/CardPrev';
+import Spiner from './Spiner'
 
 // hooks:
 import genCards from './../../hooks/useGenCards';
@@ -23,23 +24,25 @@ interface Post {
 
 export default function CardArea() {
     const [items, setItems] = useState<Array<Post>>([]);
-    const webElem = useRef<HTMLHeadingElement>(null);
+    const [unload, setUnload] = useState<boolean>(false);
 
     async function getNewPosts() {
+        setUnload(true);
         await fetch('https://jsonplaceholder.typicode.com/posts')
         .then(data => {
             if (data.ok) return data;
             throw new Error('filed connection with server');
         })
-        .then(data => {
-            let i = 0;
-            return data.json();
-        })
+        .then(data => data.json())
         .then(json => {
             json.length = 10;
-            setItems(prev => [...prev, ...genCards(json)])
+            setItems(prev => [...prev, ...genCards(json)]);
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            alert('filed connection with server');
+            console.error(err)
+        })
+        .finally(() => setUnload(false))
     } 
 
     useEffect(() => {
@@ -48,8 +51,8 @@ export default function CardArea() {
             const [scroll, height] = getScroll();
             if (height - scroll < 500 && check) {
                 check = false;
-                await getNewPosts();
-                check = true;
+                await getNewPosts()
+                .then(() => check = true);
             }
         })
         getNewPosts()
@@ -62,7 +65,6 @@ export default function CardArea() {
     return(
         <main
             className={StyleComp.card_area}
-            ref={webElem}
         >
             <ul
                 onScroll={() => {
@@ -79,6 +81,7 @@ export default function CardArea() {
                     />
                 })}
             </ul>
+            {unload ? <Spiner/> : null}
         </main>
     )
 }

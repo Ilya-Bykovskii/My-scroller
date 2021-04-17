@@ -9,6 +9,7 @@
 
     position: sticky;
     top: -465px;
+    z-index: 100;
 }
 
 .logo__wrapper {
