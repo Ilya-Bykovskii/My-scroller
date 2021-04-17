@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 
 // Components: 
 import CardPrev from './card-preview/CardPrev';
@@ -23,6 +23,7 @@ interface Post {
 
 export default function CardArea() {
     const [items, setItems] = useState<Array<Post>>([]);
+    const webElem = useRef<HTMLHeadingElement>(null);
 
     async function getNewPosts() {
         await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -30,24 +31,43 @@ export default function CardArea() {
             if (data.ok) return data;
             throw new Error('filed connection with server');
         })
-        .then(data => data.json())
+        .then(data => {
+            let i = 0;
+            return data.json();
+        })
         .then(json => {
-            json.length = 20;
+            json.length = 10;
             setItems(prev => [...prev, ...genCards(json)])
         })
         .catch(err => console.log(err));
     } 
 
     useEffect(() => {
-        console.log('useEffect')
+        let check = true;
+        window.addEventListener('scroll', async () => {
+            const [scroll, height] = getScroll();
+            if (height - scroll < 500 && check) {
+                check = false;
+                await getNewPosts();
+                check = true;
+            }
+        })
         getNewPosts()
     }, [])
+
+    function getScroll(): number[] {
+        return [window.scrollY + document.documentElement.clientHeight,   document.body.clientHeight];
+    }
 
     return(
         <main
             className={StyleComp.card_area}
+            ref={webElem}
         >
             <ul
+                onScroll={() => {
+                    console.log('hi')
+                }}
                 className={StyleComp.card_area_wrapper}
             >
                 {items.map((elem) => {

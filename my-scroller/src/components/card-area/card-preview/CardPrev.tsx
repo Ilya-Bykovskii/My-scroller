@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react';
+import React, {useState} from 'react';
 
 // Components
 import ViewMoreBtn from './Button';
@@ -21,7 +21,6 @@ const background = [
 
 export default function CardPrev(prop: PostPreview) {
     const defoultImg = 'http...';
-    const mouseHandler = useRef<HTMLHeadingElement>(null);
     const [hidden, setHidden] = useState<boolean>(true);
     const [backColor] = useState(background[Math.floor(Math.random() * 10) % 3]);
 
@@ -32,7 +31,6 @@ export default function CardPrev(prop: PostPreview) {
         >
             <div
                 className={`${StyleComp.item__wrapper} ${hidden ? ' ' : StyleComp.glass_morph}`}
-                ref={mouseHandler}
                 onMouseEnter={() => setHidden(false)}
                 onMouseLeave={() => setHidden(true)}
                 style={{background: backColor}}
