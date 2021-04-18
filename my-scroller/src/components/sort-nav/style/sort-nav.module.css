@@ -1,52 +1,22 @@
-.header {
-    border-bottom: 5px solid #F2B950;
-
-    background: rgba( 255, 255, 255, 0.15 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4.5px );
-    -webkit-backdrop-filter: blur( 4.5px );
-    border-bottom: 3px solid rgba( 255, 255, 255, 0.18 );
-
-    position: sticky;
-    top: -465px;
-    z-index: 100;
-}
-
-.logo__wrapper {
-    height: 30vw;
-    width: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-    background-image: url('https://d2kq0urxkarztv.cloudfront.net/53f6001f944872863c20dc73/1917675/upload-af46e39e-6559-4873-ae15-89b9435dc418.jpg?w=2050&e=webp');
-    -moz-background-size: 100%; /* Firefox 3.6+ */
-    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
-    -o-background-size: 100%; /* Opera 9.6+ */
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-
 .navWrapper {
     position: relative;
-    margin: 15px auto 0;
+    margin: 0 auto;
+    padding-top: 15px;
     width: 50vw;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
 
-.logo {
-    margin-bottom: 30px;
+.nav {
+    background: rgba( 255, 255, 255, 0.15 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4.5px );
+    -webkit-backdrop-filter: blur( 4.5px );
+    border-bottom: 3px solid rgba( 255, 255, 255, 0.18 );
 }
 
-.logo > img {
-    width: 20vw;
-    max-width: 200px;
-}
-
-@media only screen and (max-device-width : 900px) {
+@media only screen and (max-width : 900px) {
     .navWrapper {
         width: max-content;
     }

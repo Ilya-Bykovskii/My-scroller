@@ -1,0 +1,31 @@
+.header {
+    border-bottom: 5px solid #F2B950;
+    position: sticky;
+    top: -465px;
+    z-index: 100;
+}
+
+.logo__wrapper {
+    height: 30vw;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background-image: url('https://d2kq0urxkarztv.cloudfront.net/53f6001f944872863c20dc73/1917675/upload-af46e39e-6559-4873-ae15-89b9435dc418.jpg?w=2050&e=webp');
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.logo {
+    margin-bottom: 30px;
+}
+
+.logo > img {
+    width: 20vw;
+    max-width: 200px;
+}
