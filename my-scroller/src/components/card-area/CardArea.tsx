@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 
 // Components: 
-import CardPrev from './card-preview/CardPrev';
+import CardPrev from './../card-preview/CardPrev';
 import Spiner from './Spiner'
 
 // hooks:

@@ -1,8 +1,5 @@
 import React, {useState} from 'react';
 
-// Components
-import ViewMoreBtn from './Button';
-
 // styles
 import StyleComp from './style/card-prev.module.css';
 interface PostPreview {
