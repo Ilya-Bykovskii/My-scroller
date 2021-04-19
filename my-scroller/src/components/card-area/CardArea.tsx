@@ -4,8 +4,9 @@ import React, {useState, useEffect} from 'react';
 import CardPrev from './../card-preview/CardPrev';
 import Spiner from './Spiner'
 
-// hooks:
-import genCards from './../../hooks/useGenCards';
+// funcs:
+import loadCards from './../../functions/loadCards';
+import onloadCards from './../../functions/onloadCards';
 
 // style:
 import StyleComp from './style/card-area.module.css';
@@ -26,36 +27,17 @@ export default function CardArea() {
     const [items, setItems] = useState<Array<Post>>([]);
     const [unload, setUnload] = useState<boolean>(false);
 
-    async function getNewPosts() {
-        setUnload(true);
-        await fetch('https://jsonplaceholder.typicode.com/posts')
-        .then(data => {
-            if (data.ok) return data;
-            throw new Error('filed connection with server');
-        })
-        .then(data => data.json())
-        .then(json => {
-            json.length = 10;
-            setItems(prev => [...prev, ...genCards(json)]);
-        })
-        .catch(err => {
-            alert('filed connection with server');
-            console.error(err)
-        })
-        .finally(() => setUnload(false))
-    } 
-
     useEffect(() => {
         let check = true;
         window.addEventListener('scroll', async () => {
             const [scroll, height] = getScroll();
             if (height - scroll < 500 && check) {
                 check = false;
-                await getNewPosts()
+                await loadCards(setItems, setUnload)
                 .then(() => check = true);
             }
         })
-        getNewPosts()
+        loadCards(setItems, setUnload)
     }, [])
 
     function getScroll(): number[] {
@@ -78,6 +60,7 @@ export default function CardArea() {
                         title={elem.title}
                         preview={elem.preview}
                         preority={' '}
+                        handler={onloadCards}
                     />
                 })}
             </ul>

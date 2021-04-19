@@ -6,6 +6,25 @@
     border-radius: 10px;
 }
 
+.heart_icon {
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    z-index: 100;
+    transition: transform 200ms ease-in-out 100ms;
+    pointer-events: all;
+}
+
+.heart_icon:hover {
+    transform: scale(1.1);
+}
+
+.liked {
+    color: red;
+}
+
+/* .heart_icon: */
+
 .item:hover {
     transform: scale(1.04)
 }
