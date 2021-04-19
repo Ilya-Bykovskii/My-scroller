@@ -25,12 +25,12 @@ export default function CardPrev(prop: PostPreview) {
         <li 
             className={`${StyleComp.item} ${StyleComp[prop.preority!]}`}
             key={prop.id}
+            style={{background: backColor}}
         >
             <div
                 className={`${StyleComp.item__wrapper} ${hidden ? ' ' : StyleComp.glass_morph}`}
                 onMouseEnter={() => setHidden(false)}
                 onMouseLeave={() => setHidden(true)}
-                style={{background: backColor}}
             >
                 <h3
                     className={`${StyleComp.item__title} ${!hidden ? 'visually-hidden' : ' '}`}

@@ -3,6 +3,7 @@
     list-style: none;
     cursor: pointer;
     transition: transform 300ms linear 100ms;
+    border-radius: 10px;
 }
 
 .item:hover {
@@ -30,21 +31,20 @@
     flex-direction: column;
     justify-content: space-between;
 
-    transition: all 200ms linear 300ms;
+    transition: background transform backdrop-filter 200ms linear 300ms;
 }
 
 
 .glass_morph {
     text-align: center;
     display: flex;
-    align-item: center;
     justify-content: center;
 
     background: rgba( 255, 255, 255, 0.35 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 1.5px );
-    -webkit-backdrop-filter: blur( 1.5px );
     border-radius: 10px;
+    -webkit-backdrop-filter: blur( 1.5px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
