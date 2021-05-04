@@ -3,6 +3,9 @@
 # public
 /public
 
+# devs
+task.md
+
 # dependencies
 /node_modules
 /.pnp

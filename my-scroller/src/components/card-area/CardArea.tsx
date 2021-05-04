@@ -1,5 +1,10 @@
 import React, {useState, useEffect} from 'react';
 
+// namespace:
+/// <reference path="./../../namespaces/PostT" />
+import { PostT } from "./../../namespaces/PostT";
+
+
 // Components: 
 import CardPrev from './../card-preview/CardPrev';
 import Spiner from './Spiner'
@@ -11,20 +16,8 @@ import onloadCards from './../../functions/onloadCards';
 // style:
 import StyleComp from './style/card-area.module.css';
 
-type Preority = 'item__new' | 'item__light' | 'item__important' | ' ';
-
-interface Post {
-    id: number | string;
-    title: string;
-    preview: string;
-    body: string;
-    type?: 'animal' | 'video' | 'music' | 'books';
-    handler?: Function,
-    preority?: Preority,
-}
-
 export default function CardArea() {
-    const [items, setItems] = useState<Array<Post>>([]);
+    const [items, setItems] = useState<Array<PostT.Post>>([]);
     const [unload, setUnload] = useState<boolean>(false);
 
     useEffect(() => {

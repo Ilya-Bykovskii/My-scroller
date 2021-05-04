@@ -1,15 +1,16 @@
+// namespace:
+/// <reference path="./../../namespaces/PostT.ts" />
+import { PostT } from "./../../namespaces/PostT";
+
+
+
 import React from 'react';
 
 // style
 import StyleComp from './style/link-btn.module.css';
 import BtnComp from './style/sort-nav.module.css'
 
-interface LinkProp {
-    icon: React.ReactChild,
-    content: string,
-}
-
-export default function NavLink(prop: LinkProp) {
+export default function NavLink(prop: PostT.LinkProp) {
     return (
         <li                 
             className={`${StyleComp.btn} ${BtnComp.navItem}`}
